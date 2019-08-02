@@ -34,7 +34,7 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true }, () => {
 //___________________
 //localhost:3000
 app.get('/', (req, res) => {
-    res.send('app is running!');
+    res.render('index.ejs');
 });
 
 

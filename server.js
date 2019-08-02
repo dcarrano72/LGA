@@ -4,11 +4,19 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
+const methodOverride = require('method-override')
 //___________________
 //Port
 //___________________
 // Allow use of Heroku's port or your own local port, depending on the environment
 const PORT = process.env.PORT || 3000;
+
+//___________________
+//Middleware
+//___________________
+app.use(express.static('public'))
+app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'))
 
 //___________________
 //Database
@@ -28,6 +36,8 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true }, () => {
 app.get('/', (req, res) => {
     res.send('app is running!');
 });
+
+
 
 //___________________
 //Listener

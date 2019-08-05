@@ -29,13 +29,24 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true }, () => {
     console.log('connected to mongo database')
 });
 
+
+//___________________
+// Controllers
+//___________________
+// CONTROLLER
+const lgsessionController = require('./controllers/lgsessionController.js')
+
 //___________________
 // Routes
 //___________________
+
+app.use('/lgsession', lgsessionController)
 //localhost:3000
-app.get('/', (req, res) => {
-    res.render('index.ejs');
-});
+// app.get('/', (req, res) => {
+//     res.render('index.ejs');
+// });
+
+
 
 
 

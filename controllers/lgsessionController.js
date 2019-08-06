@@ -74,6 +74,7 @@ lgsession.delete('/active_session/:id', (req, res) => {
             console.log(err)
 
         }
+        console.log('successfully removed', item)
         item.remove()
         res.redirect('/lgsession/show_leads')
     })

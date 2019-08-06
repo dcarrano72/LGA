@@ -1,3 +1,15 @@
 /* * {
     border: solid 1px gray;
 } */
+
+.leads {
+    border: solid 1px gray;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: lightgray;
+}
+
+.new-form {
+    width: 350px;
+    text-align: right;
+}

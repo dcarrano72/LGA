@@ -7,7 +7,13 @@
     <div class="container">
         <h1>LGM New Session Page</h1>
 
-        <a href="/lead/active_session"><button>Begin New session</button></a>
+
+
+        <form action="/lgsession/make_new_session" method="POST">
+            <input type="text" name="lga_id" id="lga_id" placeholder="Enter your ID">
+            <input type="submit" value="Start">
+        </form>
+
     </div>
 
 

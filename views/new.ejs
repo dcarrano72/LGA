@@ -7,30 +7,24 @@
     <div class="container">
         <h1>LGM New Lead</h1>
 
-        <form action="/lead" method="POST">
+        <form class="new-form" action="/new" method="POST">
             <label for="business_name">Business Name:</label>
-            <input type="text" name="business_name">
+            <input type="text" name="business_name" id="business_name"><br>
 
-            <label for="contact_name">Contact Name:</label>
-            <input type="text" name="contact_name">
+            <label for="business_contact">Contact Name:</label>
+            <input type="text" name="business_contact" id="business_contact"><br>
 
-            <label for="phone_number">Phone number:</label>
-            <input type="number" name="phone_number">
-
-            <label for="business_city">Business City:</label>
-            <input type="text" name="business_city">
-
-            <label for="business_state">Business State:</label>
-            <input type="text" name="business_state">
+            <label for="business_phone">Phone number:</label>
+            <input type="number" name="business_phone" id="business_phone"><br>
 
             <label for="business_email">Business Email:</label>
-            <input type="email" name="business_email">
+            <input type="email" name="business_email" id="business_email"><br>
 
-            <label for="website_address">Website Address:</label>
-            <input type="url" name="website_address">
+            <label for="website_url">Website Address:</label>
+            <input type="url" name="website_url" id="website_url"><br>
 
-            <label for="notes">Notes:</label>
-            <input type="text" name="notes">
+            <label for="note">Notes:</label>
+            <input type="text" name="note" id="note"><br>
 
             <input type="submit" value="submit">
         </form>

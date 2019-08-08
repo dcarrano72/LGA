@@ -140,3 +140,15 @@ form label {
 .form-edit-sm {
 
 }
+
+.start-button {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    background-color: var(--accent-color-1);
+    border: none;
+    color: white;
+}

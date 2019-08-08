@@ -3,7 +3,9 @@
 <body>
 
     <% include ./partials/nav.ejs %>
-    <p>This is the Active Session Page</p>
+
+    <br>
+    <br>
 
 
     <div class="container">
@@ -52,7 +54,7 @@
 
                 <div class="session-information">
                     <!-- show current session id -->
-                    <p>Session ID: </p>
+                    <p>Session ID: <%= currentSession._id%></p>
                     <!-- show current LGA ID -->
                     <p>LGA ID: </p>
                 </div>

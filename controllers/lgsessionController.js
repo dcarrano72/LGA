@@ -155,7 +155,7 @@ lgsession.delete('/active_session/:sessionId/:leadId', (req, res) => {
 
         }
         console.log('successfully removed', req.params.leadId)
-        res.redirect('/lgsession/show_leads')
+        res.redirect(`/lgsession/active_session/${req.params.sessionId}`)
     })
 })
 

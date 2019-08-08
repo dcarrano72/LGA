@@ -2,6 +2,61 @@
     border: solid 1px gray;
 } */
 
+
+
+:root {
+    --main-bg-color: rgb(100, 105, 114); 
+    --accent-color-1: rgb(52, 58, 64);
+    --accent-color-2: rgb(48, 49, 51);
+    --accent-color-3: rgb(254, 254, 255);
+    --accent-color-4: rgb(42, 47, 53);
+  }
+
+body {
+    background-color: var(--main-bg-color);
+    color: white;
+}
+
+.lgsession-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: var(--accent-color-1);
+    padding: 20px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.enter-lga-id {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 100px;
+}
+
+.intro-wrapper {
+    width: 80%;
+    max-width: 600px;
+    padding-top: 50px;
+    margin: 0 auto;
+}
+
+.start-new-session-button {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    background-color: rgb(54, 99, 54);
+    border: none;
+}
+
+.display-page {
+    display: flex;
+    justify-content: space-around;
+}
+
 .leads {
     border: solid 1px gray;
     margin-bottom: 20px;
@@ -9,7 +64,78 @@
     background-color: lightgray;
 }
 
+.leads p {
+    line-height: .8em;
+}
+
 .new-form {
-    width: 350px;
+    max-width: 450px;
     text-align: right;
+    padding: 20px;
+    background-color: var(--accent-color-1);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.centered-form-container {
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    height: 300px;
+    margin: 100px auto;
+    background-color: var(--accent-color-1);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+form input {
+    padding: 6px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: var(--accent-color-3);
+    border: none;
+    color: var(--accent-color-1);
+}
+
+.input-text {
+    width: 54%;
+}
+
+form label {
+    margin-right: 10px;
+    color: var(--accent-color-3);
+}
+
+.active-session-display-wrapper {
+    width: 50%;
+    background-color: var(--accent-color-1);
+    padding: 20px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.active-session-form-wrapper {
+    width: 40%;
+}
+
+.leads-in-session-display {
+    background-color: var(--accent-color-4);
+    padding: 20px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.form-delete-sm {
+    margin-right: 10px;
+    float: left;
+}
+
+.form-edit-sm {
+
 }

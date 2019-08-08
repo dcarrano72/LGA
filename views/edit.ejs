@@ -7,6 +7,30 @@
     <div class="container">
         <h1>LGM Edit Page</h1>
 
+        <form class="new-form" action="/lgsession/update_lead/<%=sessionId%>/<%=specificLead._id%>?_method=PUT"
+            method="POST">
+            <label for="business_name">Business Name:</label>
+            <input type="text" name="business_name" id="business_name" value="<%= specificLead.business_name %>"><br>
+
+            <label for="business_contact">Contact Name:</label>
+            <input type="text" name="business_contact" id="business_contact"
+                value="<%= specificLead.business_contact %>"><br>
+
+            <label for="business_phone">Phone number:</label>
+            <input type="text" name="business_phone" id="business_phone" value="<%= specificLead.business_phone %>"><br>
+
+            <label for="business_email">Business Email:</label>
+            <input type="text" name="business_email" id="business_email" value="<%= specificLead.business_email %>"><br>
+
+            <label for="website_url">Website Address:</label>
+            <input type="text" name="website_url" id="website_url" value="<%= specificLead.website_url %>"><br>
+
+            <label for="note">Notes:</label>
+            <input type="text" name="note" id="note" value="<%= specificLead.note %>"><br>
+
+            <input type="submit" value="submit">
+        </form>
+
     </div>
 
 

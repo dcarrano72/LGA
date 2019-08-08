@@ -5,14 +5,21 @@
     <% include ./partials/nav.ejs %>
 
     <div class="container">
-        <h1>LGM New Session Page</h1>
+
+
+        <div class="centered-form-container">
+
+            <form action="/lgsession/make_new_session" method="POST">
+                <input class="enter-lga-id" type="text" name="lga_id" id="lga_id" placeholder="Enter your LGA ID">
+                <br>
+                <button class="start-new-session-button">Start a new lead session</button>
+            </form>
+
+        </div>
 
 
 
-        <form action="/lgsession/make_new_session" method="POST">
-            <input type="text" name="lga_id" id="lga_id" placeholder="Enter your ID">
-            <input type="submit" value="Start">
-        </form>
+
 
     </div>
 

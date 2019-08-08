@@ -3,33 +3,95 @@
 <body>
 
     <% include ./partials/nav.ejs %>
+    <p>This is the Active Session Page</p>
+
 
     <div class="container">
-        <h1>LGM Active Session Page</h1>
 
-        <a href="/lgsession/show_leads"><button>Show leads</button></a>
+        <div class="display-page">
 
-        <form class="new-form" action="/lgsession/add_new_lead/<%=sessionId%>?_method=PUT" method="POST">
-            <label for="business_name">Business Name:</label>
-            <input type="text" name="business_name" id="business_name"><br>
+            <div class="active-session-form-wrapper">
 
-            <label for="business_contact">Contact Name:</label>
-            <input type="text" name="business_contact" id="business_contact"><br>
+                <% if(typeof currentLead._id == "undefined") { %>
+                <form class="new-form" action="/lgsession/add_new_lead/<%=sessionId%>?_method=PUT" method="POST">
+                    <% } else { %>
+                    <form class="new-form"
+                        action="/lgsession/update_lead/<%=currentSession._id%>/<%=currentLead._id%>?_method=PUT"
+                        method="POST">
+                        <% } %>
+                        <label for="business_name">Business Name: </label>
+                        <input class="input-text" type="text" name="business_name" id="business_name"
+                            value="<%=currentLead.business_name%>"><br>
 
-            <label for="business_phone">Phone number:</label>
-            <input type="text" name="business_phone" id="business_phone"><br>
+                        <label for="business_contact">Contact Name: </label>
+                        <input class="input-text" type="text" name="business_contact" id="business_contact"
+                            value="<%=currentLead.business_contact%>"><br>
 
-            <label for="business_email">Business Email:</label>
-            <input type="text" name="business_email" id="business_email"><br>
+                        <label for="business_phone">Phone number: </label>
+                        <input class="input-text" type="text" name="business_phone" id="business_phone"
+                            value="<%=currentLead.business_phone%>"><br>
 
-            <label for="website_url">Website Address:</label>
-            <input type="text" name="website_url" id="website_url"><br>
+                        <label for="business_email">Business Email: </label>
+                        <input class="input-text" type="text" name="business_email" id="business_email"
+                            value="<%=currentLead.business_email%>"><br>
 
-            <label for="note">Notes:</label>
-            <input type="text" name="note" id="note"><br>
+                        <label for=" website_url">Website Address: </label>
+                        <input class="input-text" type="text" name="website_url" id="website_url"
+                            value="<%=currentLead.website_url%>"><br>
 
-            <input type="submit" value="submit">
-        </form>
+                        <label for="note">Notes: </label>
+                        <input class="input-text" type="text" name="note" id="note" value="<%=currentLead.note%>"><br>
+
+
+                        <input type="submit" value="submit">
+                    </form>
+            </div>
+
+
+            <div class="active-session-display-wrapper">
+
+                <div class="session-information">
+                    <!-- show current session id -->
+                    <p>Session ID: </p>
+                    <!-- show current LGA ID -->
+                    <p>LGA ID: </p>
+                </div>
+
+                <% currentSession.leads.reverse().forEach((lead, index) => { %>
+                <div class="leads-in-session-display">
+
+                    <p>Business Name: <%=lead.business_name%></p>
+                    <p>Business Contact: <%=lead.business_contact%></p>
+                    <p>Business Phone: <%=lead.business_phone%></p>
+                    <p>Business Email: <%=lead.business_email%></p>
+                    <p>Website URL: <%=lead.website_url%></p>
+                    <p>Notes: <%=lead.note%></p>
+                    <form class="form-delete-sm"
+                        action="/lgsession/active_session/<%=currentSession._id%>/<%=lead._id%>?_method=DELETE"
+                        method="POST">
+                        <input type="submit" value="DELETE">
+                    </form>
+                    <!-- <form action="/lgsession/active_session/<%=currentSession._id%>" method="GET"></form> -->
+                    <!-- <form action="/lgsession/update_lead/<%=currentSession._id%>/<%=lead._id%>?_method=PUT" -->
+                    <!-- method="POST"> -->
+                    <form class="form-edit-sm" action="/lgsession/active_session/<%=currentSession._id%>/<%=lead._id%>">
+                        <input type="submit" value="EDIT">
+                    </form>
+                    <!-- <a href="/lgsession/active_session/<%=currentSession._id%>/<%=lead._id%>"><input
+                            class="form-edit-sm" type="button" value="EDIT"></a> -->
+                    <!-- </form> -->
+
+                </div>
+                <hr>
+                <% }) %>
+
+            </div>
+
+        </div>
+
+
+
+
 
     </div>
 

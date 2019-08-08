@@ -5,28 +5,35 @@
     <% include ./partials/nav.ejs %>
 
     <div class="container">
-        <h1>LGM Show Leads Page</h1>
-
-        <a href="/lgsession/session_ended"><button>Session Ended</button></a>
 
         <% sessionData.forEach( (eachSession, index) => { %>
-        <div>
+        <div class="lgsession-container">
             <p>LG Session ID: <%= eachSession._id %></p>
             <p>LGA ID: <%= eachSession.lga_id %></p>
+            <form action="/lgsession/delete_session/<%=eachSession._id%>?_method=DELETE" method="POST">
+                <input type="submit" value="DELETE SESSION">
+            </form>
+            <br>
+            <br>
 
 
 
             <% eachSession.leads.forEach( (leads, index) => { %>
-            <div class="leads">
+            <div class="leads-in-session-display">
                 <p>Business Name: <%= leads.business_name %></p>
                 <p>Business Contact: <%= leads.business_contact %></p>
                 <p>Business Phone: <%= leads.business_phone %></p>
                 <p>Business Email: <%= leads.business_email %></p>
                 <p>Website URL: <%= leads.website_url %></p>
                 <p>Notes: <%= leads.note %></p>
-                <form action="/active_session/<%=leads._id%>?_method=DELETE" method="POST">
+                <form class="form-delete-sm"
+                    action="/lgsession/active_session/<%=eachSession._id%>/<%=leads._id%>?_method=DELETE" method="POST">
                     <input type="submit" value="DELETE">
                 </form>
+                <form class="form-edit-sm" action="/lgsession/edit/<%=eachSession._id%>/<%=leads._id%>" method="POST">
+                    <input type="submit" value="EDIT">
+                </form>
+
             </div>
             <% }) %>
         </div>

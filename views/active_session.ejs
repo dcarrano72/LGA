@@ -56,7 +56,7 @@
                     <!-- show current session id -->
                     <p>Session ID: <%= currentSession._id%></p>
                     <!-- show current LGA ID -->
-                    <p>LGA ID: </p>
+                    <p>LGA ID: <%= currentSession.lga_id%></p>
                 </div>
 
                 <% currentSession.leads.reverse().forEach((lead, index) => { %>

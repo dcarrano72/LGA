@@ -48,8 +48,9 @@ body {
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
-    background-color: rgb(54, 99, 54);
+    background-color: var(--accent-color-4);
     border: none;
+    color: white;
 }
 
 .display-page {

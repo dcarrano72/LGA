@@ -57,6 +57,7 @@
                     <p>Session ID: <%= currentSession._id%></p>
                     <!-- show current LGA ID -->
                     <p>LGA ID: <%= currentSession.lga_id%></p>
+                    <button class="print-list-button" onclick="printList();">Print List</button>
                 </div>
 
                 <% currentSession.leads.reverse().forEach((lead, index) => { %>
@@ -109,6 +110,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+    <script>
+        const printList = () => {
+            window.print();
+        }
+    </script>
 </body>
 
 </html>
